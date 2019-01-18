@@ -1,9 +1,12 @@
-class HotelsController < ApplicationController
-  before_action :set_hotel, only: [:show, :update, :destroy]
+# frozen_string_literal: true
+
+class HotelsController < ProtectedController
+  before_action :set_hotel, only: %i[show update destroy]
+  attr_reader :current_user
 
   # GET /hotels
   def index
-    @hotels = Hotel.all
+    @hotels = current_user.hotels.order(id: :asc)
 
     render json: @hotels
   end
@@ -15,7 +18,7 @@ class HotelsController < ApplicationController
 
   # POST /hotels
   def create
-    @hotel = Hotel.new(hotel_params)
+    @hotel = current_user.hotels.build(hotel_params)
 
     if @hotel.save
       render json: @hotel, status: :created, location: @hotel
@@ -39,13 +42,14 @@ class HotelsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_hotel
-      @hotel = Hotel.find(params[:id])
-    end
 
-    # Only allow a trusted parameter "white list" through.
-    def hotel_params
-      params.require(:hotel).permit(:name, :location)
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_hotel
+    @hotel = current_user.hotels.find(params[:id])
+  end
+
+  # Only allow a trusted parameter "white list" through.
+  def hotel_params
+    params.require(:hotel).permit(:name, :location)
+  end
 end
