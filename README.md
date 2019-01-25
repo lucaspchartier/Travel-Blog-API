@@ -27,10 +27,21 @@ incorporating a 3rd party travel API (i.e. TripAdvisor, Expedia) to include
 various airlines for the flight that the user adds to their list.
 
 ### Planning, process, and problem-solving strategies
+Within the first day of project week, I was already drawing out my wireframes
+and designing my ERDs, and I was also able to accomplish creating a single
+hotels table under user in Rails. After getting all of my curl scripts to work
+in my back end, I then decided to focus all of my attention to getting my front
+end fully functional using React. While navigating through each component and
+fully rendering each one was a bit of a challenge, since I am fairly new to
+React after, all, I used previous React lessons from the week before as a guide
+to make sure I had all of my states correct, that nothing was causing a
+component to crash, etc. I also embraced the beauty of the issue cue, where
+instructors would guide me to very minor things in my code that caused the
+client to break, such as missing `hotel` in a particular state while having
+something else in its place.
 
-
-### Wireframes
-![ERDs](https://i.imgur.com/ZvayLXj.jpg)
+### ERDs
+![ERDs](https://i.imgur.com/a5d2wSk.png)
 
 ### API Routes
 | Verb   | URI Pattern            | Controller#Action |
