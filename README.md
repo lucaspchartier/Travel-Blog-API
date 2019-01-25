@@ -39,11 +39,11 @@ various airlines for the flight that the user adds to their list.
 | POST   | `/sign-in`             | `users#signin`    |
 | DELETE | `/sign-out`            | `users#signout`   |
 | PATCH  | `/change-password`     | `users#changepw`  |
-| POST   | `/items`               | `items#create`    |
-| GET    | `/items`               | `items#index`     |
-| GET    | `/items/:id`           | `items#show`      |
-| PATCH  | `/items/:id`           | `items#update`    |
-| DELETE | `/items/:id`           | `items#delete`    |
+| POST   | `/hotels`              | `hotels#create`   |
+| GET    | `/hotels`              | `hotels#index`    |
+| GET    | `/hotels/:id`          | `hotels#show`     |
+| PATCH  | `/hotels/:id`          | `hotels#update`   |
+| DELETE | `/hotels/:id`          | `hotels#delete`   |
 
 ### Set up and installation instructions
 1. Fork and clone this repository
