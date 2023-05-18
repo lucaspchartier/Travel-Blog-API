@@ -97,6 +97,8 @@ GEM
     nio4r (2.5.9)
     nokogiri (1.15.0-x86_64-darwin)
       racc (~> 1.4)
+    nokogiri (1.15.0-x86_64-linux)
+      racc (~> 1.4)
     parallel (1.23.0)
     parser (2.7.2.0)
       ast (~> 2.4.1)
@@ -199,6 +201,7 @@ GEM
 
 PLATFORMS
   x86_64-darwin-21
+  x86_64-linux
 
 DEPENDENCIES
   active_model_serializers (~> 0.10.6)
